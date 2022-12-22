@@ -1,0 +1,95 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(255, 255, 255); }
+
+.container {
+  margin-left: 100px;
+  margin-top: 130px;
+}
+
+.container-2 {
+  margin-left: 100px;
+}
+
+.mb-4{
+  margin-top: 40px;
+  font-size: 20px;
+  color: rgb(102, 102, 102);
+}
+
+.mb-2{
+  margin-top: 20px;
+  font-size: 20px;
+  color: rgb(102, 102, 102);
+}
+
+h3{
+  font-size: 60px;
+  color: rgb(41, 112, 255);
+  font-weight: 600;
+}
+
+.login{
+  margin-top: 50px;
+  width: 180px;
+  background-color: rgb(80, 130, 255);
+  color: white;
+}
+
+.input-login{
+  margin-top: 20px;
+  width: 300px;
+  color: black;
+  border-style: ridge;
+  border-color: ghostwhite;
+}
+
+.login-2{
+  margin-top: 30px;
+  width: 180px;
+  background-color: rgb(80, 130, 255);
+  color: white;
+  border-radius: 0%;
+}
+
+.pb_dati{
+  margin-top: 50px;
+  margin-left: 20px;
+  width: 250px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(80, 130, 255);
+  border-color: rgb(80, 130, 255);
+}
+
+.contact{
+    display: flex;
+    margin-top: 30px;
+    height: 30%;
+    width: 45%;
+}
+
+.btn_error{
+  margin-top: 325px;
+  margin-left: 800px;
+  width: 180px;
+  background-color: rgb(255, 137, 98);
+  color: white;
+}
+
+.register{
+  position: absolute;
+  margin-top: 12%;
+  width: 1000px;
+}
+
+
+.bg {
+  width: 50%; 
+  height: 940px;
+  background-size: cover;
+  background-position: center; 
+  
+}
+
+
+
