@@ -26,7 +26,7 @@
 
       <div class="input-group mb-3 rounded" style="width: 400px; border-radius: 50px; ">
         <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1" style="border-radius: 30px 30px 30px 30px;">
-        <input type="submit" value="Radīt visu" class="btn" style="position: absolute; margin-left: 105%; border-radius: 20px;  background-color: rgb(80, 130, 255); color: aliceblue;">
+        <input type="submit" value="Radīt visu" onclick="change3();" class="btn" style="position: absolute; margin-left: 105%; border-radius: 20px;  background-color: rgb(80, 130, 255); color: aliceblue;">
        
         <input type="submit" id="vielas" onclick="change1();" value="Radīt vielas" class="btn" style="position: absolute; margin-left: 134%; border-radius: 20px; background-color: rgb(255, 255, 255); color: rgb(80, 130, 255); border-color: rgb(80, 130, 255);" formaction="/index.html">
         <input type="submit" id="aprikojumi" onclick="change2();" value="Radīt aprikojumu" class="btn " style="position: absolute; margin-left: 165%; border-radius: 20px; background-color: rgb(255, 255, 255); color: rgb(80, 130, 255); border-color: rgb(80, 130, 255);"  formaction="/index.html">
@@ -219,7 +219,101 @@ async function change1() {
          });
          container.appendChild(table)
       })
-      }
+    }
+  }
+
+  async function change3() {
+      
+      if(typeof vielaslist && inventars !== "undefined") {
+        vielaslist.style.display = "table";
+        inventars.style.display = "table";
+      }else{
+       fetch('./inventars.json')
+      .then((res) => res.json())
+      .then((data) => { 
+        console.log(Object.keys(data[0]));
+        let container = document.getElementById("container-2");
+
+        let table = document.createElement("table");
+        table.id = "inventars";
+        table.classList.add("table");
+        table.setAttribute("style", "width: 1600px; margin-left: 3%; margin-top: 100px;");
+        let cols = Object.keys(data[0]);
+        let thead = document.createElement("thead");
+        thead.setAttribute("class", "thead-dark");
+        let tr = document.createElement("tr");
+
+
+        
+        table.appendChild(thead);
+        cols.forEach((item) => {
+            let th = document.createElement("th");
+            th.innerText = item; 
+            tr.appendChild(th);
+         });
+
+         
+         thead.appendChild(tr);
+         table.append(thead) 
+
+         data.forEach((item) => {
+            let tr = document.createElement("tr");
+            let vals = Object.values(item);
+            
+            vals.forEach((elem) => {
+               let td = document.createElement("td");
+               td.innerText = elem;
+               tr.appendChild(td);
+               
+            });
+            // thead.className("thead-dark");
+            table.appendChild(tr);
+         });
+         container.appendChild(table)
+      })
+      fetch('./vielas.json')
+      .then((res) => res.json())
+      .then((data) => { 
+        console.log(Object.keys(data[0]));
+        let container = document.getElementById("container-1");
+
+        let table = document.createElement("table");
+        table.classList.add("table");
+        table.id = "vielaslist";
+        table.setAttribute("style", "width: 1600px; margin-left: 3%; margin-top: 100px;");
+        let cols = Object.keys(data[0]);
+        let thead = document.createElement("thead");
+        thead.setAttribute("class", "thead-dark");
+        let tr = document.createElement("tr");
+
+        
+        table.appendChild(thead);
+        cols.forEach((item) => {
+            let th = document.createElement("th");
+            th.innerText = item; 
+            tr.appendChild(th);
+         });
+
+         
+         thead.appendChild(tr);
+         table.append(thead) 
+
+         data.forEach((item) => {
+            let tr = document.createElement("tr");
+            let vals = Object.values(item);
+            
+            vals.forEach((elem) => {
+               let td = document.createElement("td");
+               td.innerText = elem;
+               tr.appendChild(td);
+               
+            });
+            // thead.className("thead-dark");
+            table.appendChild(tr);
+         });
+         container.appendChild(table)
+      })
+    }
   }
 
   </script>
