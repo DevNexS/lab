@@ -40,8 +40,6 @@
       fetch('./users.json')
       .then((res) => res.json())
       .then((data) => {
-    // .then((res) => res.json())
-    //   .then((data) => {
       var datastr = JSON.stringify(data)
       console.log(data);
     })
@@ -58,8 +56,7 @@
       {
       if (data.users[i].username === usernames) {
         if (data.users[i].password == passwords) {
-          console.log("Login successful");
-          window.location.href = "./datubazes.html";
+          window.location.href = "./datubaze.html";
           alert("Login successful");
         }
       }else
@@ -69,42 +66,6 @@
     }
   })
 }
-
-
-//     function login() {
-//       const usernames = document.getElementById("username").value;
-//       const passwords = document.getElementById("password").value;
-//       fetch('./users.json')
-//       .then((res) => res.json())
-//       .then((data) => {
-//       var datastr = JSON.stringify({data,
-//       username: 'abc@abc.com',
-//       password: '123456',
-//       })
-//       console.log(datastr);
-
-//       const users = JSON.parse(localStorage.getItem('users'));
-//       const user = users.find(users => users.username === username.value);
-//       console.log(user);
-//       if (user) {
-//       if (user.password === password.value) {
-//         alert("Wellcome " + user.username);
-//       } else {
-//         alert("Wrong password.");
-//       }
-//     } else {
-//       alert("User deos not exist.");
-//     }
-//   })
-// }
-    
-    //  JSON.stringify({users: [{username: username, password: password}]})
-    
   </script>
 </body>
 </html>
-
-<!-- fetch('./users.json')
-.then((res) => res.json())
-.then((data) => {
-JSON.stringify({email: email, password: password}) -->
